@@ -83,15 +83,17 @@ static void writeOutput(const output_t &out, const bool &state)
     outputStates[out].triggered = state;
 }
 
-static void noteOn([[maybe_unused]] const uint8_t &channel, const uint8_t &note, [[maybe_unused]] const uint8_t &velocity)
+static void noteOn([[maybe_unused]] const uint8_t &channel, const uint8_t &note, const uint8_t &velocity)
 {
+    if (velocity <= SENSITIVITY)
+        return;
     output_t out;
     if (!outputForNote(note, out))
         return;
 
     auto io = &outputs[out];
     auto st = &outputStates[out];
-    auto t = micros();
+    auto t = millis();
     if (t - st->triggeredAt > io->timing->hold + io->timing->holdOff)
     {
         writeOutput(out, HIGH);
