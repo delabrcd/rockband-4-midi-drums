@@ -5,7 +5,7 @@
 enum output_t
 {
     FIRST_OUT,
-    OUT_KICK = FIRST_OUT,
+    OUT_KICK,
     OUT_PAD_RED,
     OUT_PAD_YELLOW,
     OUT_PAD_BLUE,
@@ -34,6 +34,7 @@ struct output_conf_t
 };
 
 static constexpr output_conf_t outputs[NUM_OUT] = {
+    [FIRST_OUT] = {}, // Not used
     [OUT_KICK] = {.pin = 2, .timing = &kickTiming},
     [OUT_PAD_RED] = {.pin = A0, .timing = &padTiming},
     [OUT_PAD_YELLOW] = {.pin = A1, .timing = &padTiming},
@@ -80,7 +81,7 @@ static bool outputForNote(const uint8_t &note, output_t &out)
 static void writeOutput(const output_t &out, const bool &state)
 {
     digitalWrite(outputs[out].pin, state);
-    outputStates[out].triggered = state;
+    outputStates[out].triggered = (out == OUT_KICK ? !state : state);
 }
 
 static void noteOn([[maybe_unused]] const uint8_t &channel, const uint8_t &note, const uint8_t &velocity)
@@ -96,7 +97,7 @@ static void noteOn([[maybe_unused]] const uint8_t &channel, const uint8_t &note,
     auto t = millis();
     if (t - st->triggeredAt > io->timing->hold + io->timing->holdOff)
     {
-        writeOutput(out, HIGH);
+        writeOutput(out, (out == OUT_KICK ? LOW : HIGH));
         st->triggeredAt = t;
     }
 }
@@ -108,7 +109,7 @@ void setup()
     for (int out = FIRST_OUT; out < NUM_OUT; out++)
     {
         pinMode(outputs[out].pin, OUTPUT);
-        writeOutput(static_cast<output_t>(out), LOW);
+        writeOutput(static_cast<output_t>(out), (out == OUT_KICK ? HIGH : LOW));
     }
     MIDI.begin(MIDI_CHANNEL);
 }
@@ -129,6 +130,6 @@ void loop()
     for (auto out = 0; out < NUM_OUT; out++)
     {
         if (outputStates[out].triggered && t - outputStates[out].triggeredAt > outputs[out].timing->hold)
-            writeOutput((output_t)out, LOW);
+            writeOutput((output_t)out, (out == 1 ? HIGH : LOW));
     }
 }
