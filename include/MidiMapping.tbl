@@ -3,8 +3,8 @@
 #endif
 // MIDI_MAP(midi_note_input, rb_drums_out)
 
-// PDP Config
-// kick
+// // PDP Config
+// // kick
 // MIDI_MAP(36, OUT_KICK)
 // // red pad
 // MIDI_MAP(38, OUT_PAD_RED)
@@ -31,44 +31,40 @@
 // MIDI_MAP(53, OUT_CYM_BLUE)
 // MIDI_MAP(59, OUT_CYM_BLUE)
 
-// // MadCatz Conf
+// // MadCatz Conf for Alesis Nitro Mesh Kit
 
-// kick
+// Kick
 MIDI_MAP(36, OUT_KICK)
-MIDI_MAP(44, OUT_KICK) //  2nd pedal
+MIDI_MAP(44, OUT_KICK) //  Hi-Hat Pedal
 
-// red pad
+// Snare (red pad)
 MIDI_MAP(38, OUT_PAD_RED)
-MIDI_MAP(40, OUT_PAD_RED)
+MIDI_MAP(40, OUT_PAD_RED) // Rim
 
-// green pad
+// Tom 3 (green pad)
 MIDI_MAP(43, OUT_PAD_GREEN)
-// MIDI_MAP(58, OUT_PAD_GREEN)
+MIDI_MAP(58, OUT_PAD_GREEN) // Rim
 
-// blue pad
+// Tom 2 (blue pad)
 MIDI_MAP(45, OUT_PAD_BLUE)
+MIDI_MAP(47, OUT_PAD_BLUE) // Rim
 
-// yellow pad
+// Tom 1 (yellow pad)
 MIDI_MAP(48, OUT_PAD_YELLOW)
+MIDI_MAP(50, OUT_PAD_YELLOW) // Rim
 
-// yellow cymbal
-MIDI_MAP(46, OUT_CYM_YELLOW) // open
-// MIDI_MAP(22, OUT_CYM_YELLOW) // open
-// MIDI_MAP(23, OUT_CYM_YELLOW) // half-open
-// MIDI_MAP(42, OUT_CYM_YELLOW) // closed
+// Hi-Hat (yellow cymbal)
+MIDI_MAP(46, OUT_CYM_YELLOW) // Hi-Hat Open
+MIDI_MAP(22, OUT_CYM_YELLOW) // Hi-Hat Open (alt)
+MIDI_MAP(23, OUT_CYM_YELLOW) // Hi-Hat Half-Open
+MIDI_MAP(42, OUT_CYM_YELLOW) // Hi-Hat Closed
 
-// blue cymbal
+// Technically the Crash should be Green and Ride be Blue
+// but for sake of simplicity with Rock Band 4, I inverted
+// them to match the toy drums.
+
+// Crash 1 (blue cymbal)
 MIDI_MAP(49, OUT_CYM_BLUE)
 
-// green cymbal
+// Ride (green cymbal)
 MIDI_MAP(51, OUT_CYM_GREEN)
-
-// Don't Use?
-
-// MIDI_MAP(52, OUT_CYM_GREEN)
-// MIDI_MAP(55, OUT_CYM_GREEN)
-// MIDI_MAP(57, OUT_CYM_GREEN)
-// // blue cymbal
-// MIDI_MAP(51, OUT_CYM_BLUE)
-// MIDI_MAP(53, OUT_CYM_BLUE)
-// MIDI_MAP(59, OUT_CYM_BLUE)
