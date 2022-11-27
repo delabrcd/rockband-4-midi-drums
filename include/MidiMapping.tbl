@@ -2,6 +2,8 @@
 #pragma error "MidiMapping.tbl should only be included after MIDI_MAP has been defined"
 #endif
 // MIDI_MAP(midi_note_input, rb_drums_out)
+
+#ifndef USE_RB_DRUM_CONFIG
 // kick
 MIDI_MAP(36, OUT_KICK)
 // red pad
@@ -11,12 +13,12 @@ MIDI_MAP(40, OUT_PAD_RED)
 MIDI_MAP(43, OUT_PAD_GREEN)
 // blue pad
 MIDI_MAP(45, OUT_PAD_BLUE)
-// yellow pad 
+// yellow pad
 MIDI_MAP(48, OUT_PAD_YELLOW)
-// blue cymbal 
+// blue cymbal
 MIDI_MAP(26, OUT_CYM_BLUE)
 MIDI_MAP(46, OUT_CYM_BLUE)
-// yellow cymbal 
+// yellow cymbal
 MIDI_MAP(22, OUT_CYM_YELLOW)
 MIDI_MAP(42, OUT_CYM_YELLOW)
 // green cymbal
@@ -28,3 +30,41 @@ MIDI_MAP(57, OUT_CYM_GREEN)
 MIDI_MAP(51, OUT_CYM_BLUE)
 MIDI_MAP(53, OUT_CYM_BLUE)
 MIDI_MAP(59, OUT_CYM_BLUE)
+#else
+// // Rock Band 4 Drum Config with Alesis Nitro Mesh Kit
+// Kick
+MIDI_MAP(36, OUT_KICK)
+MIDI_MAP(44, OUT_KICK) //  Hi-Hat Pedal
+
+// Snare (red pad)
+MIDI_MAP(38, OUT_PAD_RED)
+MIDI_MAP(40, OUT_PAD_RED) // Rim
+
+// Tom 3 (green pad)
+MIDI_MAP(43, OUT_PAD_GREEN)
+MIDI_MAP(58, OUT_PAD_GREEN) // Rim
+
+// Tom 2 (blue pad)
+MIDI_MAP(45, OUT_PAD_BLUE)
+MIDI_MAP(47, OUT_PAD_BLUE) // Rim
+
+// Tom 1 (yellow pad)
+MIDI_MAP(48, OUT_PAD_YELLOW)
+MIDI_MAP(50, OUT_PAD_YELLOW) // Rim
+
+// Hi-Hat (yellow cymbal)
+MIDI_MAP(46, OUT_CYM_YELLOW) // Hi-Hat Open
+MIDI_MAP(22, OUT_CYM_YELLOW) // Hi-Hat Open (alt)
+MIDI_MAP(23, OUT_CYM_YELLOW) // Hi-Hat Half-Open
+MIDI_MAP(42, OUT_CYM_YELLOW) // Hi-Hat Closed
+
+// Technically the Crash should be Green and Ride be Blue
+// but for sake of simplicity with Rock Band 4, I inverted
+// them to match the toy drums.
+
+// Crash 1 (blue cymbal)
+MIDI_MAP(49, OUT_CYM_BLUE)
+
+// Ride (green cymbal)
+MIDI_MAP(51, OUT_CYM_GREEN)
+#endif
