@@ -167,3 +167,9 @@ If this still isn't the case you can try:
 - power cycling the arduino 
 
 **If your RX light *is* on**, that means your arduino has established a midi connection with your drums. Make sure your pinouts going to your controller are correct and that your controller is on. 
+
+## Additional Troubleshooting steps
+
+- Ensure your toy drum has the latest [firmware updates](https://harmonix.zendesk.com/hc/en-us/articles/218238387-How-To-Update-Your-Xbox-One-MadCatz-Firmware)
+- Ensure the soldered pins (or wires) are properly soldered
+- Ensure the compiled code is configured for the right toy drum (PDP vs MadCatz)
