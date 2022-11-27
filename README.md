@@ -30,8 +30,8 @@
 - [Arduino Uno](https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6) or any clone
 - Any arduino [midi shield](https://www.amazon.com/Comimark-Breakout-Arduino-Digital-Interface/dp/B07X44L1T4/ref=dp_fod_1?pd_rd_i=B07X44L1T4&psc=1)
 - [24 or 26 AWG Wire](https://www.amazon.com/dp/B089CHVN7G?ref=ppx_yo2ov_dt_b_product_details&th=1) multiple colors is a plus for less confusion, but not necessary
-- 5 JST 2.0 2 pin male connectors
-- 1 JST 2.0 5 pin male connector 
+- 5 JST 2.0 2-pin male connectors
+- 1 JST 2.0 5-pin male connector
 - [Midi Cable](https://www.amazon.com/dp/B009GUP7U8?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 - [USB A -> B cable](https://www.amazon.com/AmazonBasics-USB-2-0-Cable-Male/dp/B00NH11KIK/ref=sr_1_3?crid=3C7VI85EACIL9&keywords=usb+a+to+b&qid=1662131751&sprefix=usb+a+to+b%2Caps%2C120&sr=8-3) (most arduino's will come with one of these)
 
@@ -42,7 +42,7 @@
 - Computer running [VSCode](https://code.visualstudio.com/) w/ the [PlatformIO](https://platformio.org/) extension installed
 
 ## Optional Parts
-- 3 JST 2.54 Male & Female Pair (instead of soldering the wires directly to the midi shield)
+- 3 JST 2.54 4-pin Male & Female Pair (instead of soldering the wires directly to the midi shield)
 
 ## Notes about Parts
 - I bought this [kit](https://www.amazon.com/dp/B09Q5G8DVB?psc=1&ref=ppx_yo2ov_dt_b_product_details) with all the JST things I needed, crimpers included. It was definitely nice not having to worry if I messed up a crimp or two - I definitely recommend getting extra. 
