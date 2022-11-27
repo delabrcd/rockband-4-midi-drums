@@ -3,36 +3,35 @@
 #endif
 // MIDI_MAP(midi_note_input, rb_drums_out)
 
-// // PDP Config
-// // kick
-// MIDI_MAP(36, OUT_KICK)
-// // red pad
-// MIDI_MAP(38, OUT_PAD_RED)
-// MIDI_MAP(40, OUT_PAD_RED)
-// // green pad
-// MIDI_MAP(43, OUT_PAD_GREEN)
-// // blue pad
-// MIDI_MAP(45, OUT_PAD_BLUE)
-// // yellow pad
-// MIDI_MAP(48, OUT_PAD_YELLOW)
-// // blue cymbal
-// MIDI_MAP(26, OUT_CYM_BLUE)
-// MIDI_MAP(46, OUT_CYM_BLUE)
-// // yellow cymbal
-// MIDI_MAP(22, OUT_CYM_YELLOW)
-// MIDI_MAP(42, OUT_CYM_YELLOW)
-// // green cymbal
-// MIDI_MAP(49, OUT_CYM_GREEN)
-// MIDI_MAP(52, OUT_CYM_GREEN)
-// MIDI_MAP(55, OUT_CYM_GREEN)
-// MIDI_MAP(57, OUT_CYM_GREEN)
-// // blue cymbal
-// MIDI_MAP(51, OUT_CYM_BLUE)
-// MIDI_MAP(53, OUT_CYM_BLUE)
-// MIDI_MAP(59, OUT_CYM_BLUE)
-
-// // MadCatz Conf for Alesis Nitro Mesh Kit
-
+#ifndef USE_RB_DRUM_CONFIG
+// kick
+MIDI_MAP(36, OUT_KICK)
+// red pad
+MIDI_MAP(38, OUT_PAD_RED)
+MIDI_MAP(40, OUT_PAD_RED)
+// green pad
+MIDI_MAP(43, OUT_PAD_GREEN)
+// blue pad
+MIDI_MAP(45, OUT_PAD_BLUE)
+// yellow pad
+MIDI_MAP(48, OUT_PAD_YELLOW)
+// blue cymbal
+MIDI_MAP(26, OUT_CYM_BLUE)
+MIDI_MAP(46, OUT_CYM_BLUE)
+// yellow cymbal
+MIDI_MAP(22, OUT_CYM_YELLOW)
+MIDI_MAP(42, OUT_CYM_YELLOW)
+// green cymbal
+MIDI_MAP(49, OUT_CYM_GREEN)
+MIDI_MAP(52, OUT_CYM_GREEN)
+MIDI_MAP(55, OUT_CYM_GREEN)
+MIDI_MAP(57, OUT_CYM_GREEN)
+// blue cymbal
+MIDI_MAP(51, OUT_CYM_BLUE)
+MIDI_MAP(53, OUT_CYM_BLUE)
+MIDI_MAP(59, OUT_CYM_BLUE)
+#else
+// // Rock Band 4 Drum Config with Alesis Nitro Mesh Kit
 // Kick
 MIDI_MAP(36, OUT_KICK)
 MIDI_MAP(44, OUT_KICK) //  Hi-Hat Pedal
@@ -68,3 +67,4 @@ MIDI_MAP(49, OUT_CYM_BLUE)
 
 // Ride (green cymbal)
 MIDI_MAP(51, OUT_CYM_GREEN)
+#endif
