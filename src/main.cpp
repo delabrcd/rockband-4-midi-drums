@@ -32,8 +32,7 @@ static void writeOutput(const output_t &out, const bool &state) {
     outputStates[out].triggered = state;
 }
 
-static void noteOn([[maybe_unused]] const uint8_t &channel, const uint8_t &note,
-                   const uint8_t &velocity) {
+static void noteOn(const uint8_t &note, const uint8_t &velocity) {
     if (velocity <= SENSITIVITY)
         return;
     output_t out = outputForNote(note);
@@ -63,11 +62,10 @@ void loop() {
     while (MIDI.read()) {
         // you can technically add a note ON handler in the midi library, but i like this better
         auto location_byte = MIDI.getType();
-        auto channel       = MIDI.getChannel();
         auto note          = MIDI.getData1();
         auto velocity      = MIDI.getData2();
         if (location_byte == midi::MidiType::NoteOn)
-            noteOn(channel, note, velocity);
+            noteOn(note, velocity);
     }
     auto t = millis();
     for (auto out = 0; out < NUM_OUT; out++) {
