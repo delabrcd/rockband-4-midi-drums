@@ -1,3 +1,4 @@
+**NOTE: THIS PROJECT HAS BEEN SUPERSEDED BY [OPENRB](https://github.com/delabrcd/openrb-instruments) AND IS NO LONGER THE RECOMMENDED SOLUTION FOR AN XBOX MIDI ADAPTER**
 
 # Rockband 4 Midi Drums
  an adaptation of [rockbend](https://github.com/rafl/diy-rockband/tree/master/rockbend) with off-the-shelf parts
